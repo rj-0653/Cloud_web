@@ -1,0 +1,283 @@
+/* Define color palette */
+:root {
+  --primary-color: #006d77; /* Dark teal */
+  --secondary-color: #83c5be; /* Medium teal */
+  --background-color: #edf6f9; /* Light teal */
+  --accent-color: #ffddd2; /* Light peach */
+  --highlight-color: #e29578; /* Coral */
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 1.2rem; /* Increase font size for links */
+  font-weight: 600; /* Make font bolder */
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--highlight-color);
+}
+
+/* Hero Section with Parallax Background */
+/* Hero Section with Two Columns */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+}
+
+/* Image on the Left */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 550px; /* Adjust size as needed */
+  border-radius: 10px; /* Optional: Rounded corners */
+  margin-right: 90px;
+  margin-top: 40px;
+}
+
+/* Content on the Right */
+.content {
+  flex: 1;
+  padding-left: 2rem; /* Adds spacing between image and content */
+  text-align: left;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--highlight-color);
+}
+
+/* Typing Animation */
+#animated-text {
+  border-right: 2px solid var(--primary-color); /* Cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards,
+    blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Class to stop the cursor blink after typing */
+.stop-cursor-blink {
+  animation: none;
+  border-right: none;
+}
+
+/* Parallax Sections */
+.parallax {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* About and Projects Sections */
+/* Projects Section with Enhanced Radial Gradient */
+.projects-section {
+  padding: 4rem 2rem;
+  min-height: 100vh; /* Ensure the section covers the full viewport height */
+  background: radial-gradient(
+    circle,
+    #83c5be 20%,
+    #edf6f9 60%,
+    #edf6f9 100%
+  ); /* Smooth transition and merging */
+  color: #006d77; /* Primary color for text */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+/* Header Styling */
+.projects-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.projects-header h2 {
+  font-size: 2.5rem;
+  color: #006d77; /* Primary color */
+  font-weight: bold;
+}
+
+.projects-header h2 span {
+  color: #e29578; /* Accent color */
+}
+
+/* Project Cards */
+.projects-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #ffffff;
+  color: #006d77; /* Primary color for text */
+  padding: 2rem;
+  width: 250px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #e29578; /* Accent color */
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #006d77; /* Primary color */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #6a6a6a; /* Light gray for description */
+  margin-bottom: 1.5rem;
+}
+
+.learn-more {
+  color: #006d77;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+/* Contact Section */
+#contact {
+  background-color: #006d77; /* Darkest tone from the palette */
+  color: #ffffff; /* White text for contrast */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #ffffff; /* White color for heading */
+  margin-bottom: 0.5rem;
+}
+
+#contact h5 {
+  font-size: 1.5rem;
+  color: #ffddd2; /* White color for heading */
+  margin-bottom: 0.5rem;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #ffddd2; /* Accent color for the subheading text */
+  margin: 0;
+}
